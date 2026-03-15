@@ -1,0 +1,11 @@
+﻿namespace Economy.Domain
+{
+    public class UnitGold : ResourceUnit
+    {
+        public UnitGold(int value, int limit)
+        {
+            this.value = value;
+            this.limit = limit;
+        }
+    }
+}

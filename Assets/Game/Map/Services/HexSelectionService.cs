@@ -2,6 +2,7 @@ using Cysharp.Threading.Tasks;
 using Map.Domain;
 using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace Map.Services
 {
@@ -12,17 +13,22 @@ namespace Map.Services
         public Hex selectedCell { get; private set; }
         private MeshRenderer selectedMesh;
 
-        public event Action<Hex> OnHover;
-        public event Action<Hex> OnSelect;
+        public event Action<Hex, Transform> OnHover;
+        public event Action OffHover;
+        public event Action<Hex, Transform> OnSelect;
+        public event Action OffSelect;
 
         public void Hover(Hex hex, MeshRenderer mesh)
         {
+            if (onUIBlock)
+                return;
+
             UnHover();
             hoveredMesh = mesh;
             hoveredMesh.renderingLayerMask = (1u << 0) | (1u << 1);
 
             hoveredCell = hex;
-            OnHover?.Invoke(hex);
+            OnHover?.Invoke(hex, mesh.transform);
         }
 
         public void UnHover()
@@ -36,33 +42,45 @@ namespace Map.Services
 
         public void Select(Hex hex, MeshRenderer mesh)
         {
+            if (onUIBlock)
+                return;
+
             UnSelect();
             selectedMesh = mesh;
             selectedMesh.renderingLayerMask = (1u << 0) | (1u << 1);
 
             selectedCell = hex;
-            OnSelect?.Invoke(hex);
+            OnSelect?.Invoke(hex, mesh.transform);
 
             Debug.Log("Select");
         }
 
         public void UnSelect()
         {
+            if (onUIBlock)
+                return;
+
             if (selectedMesh)
                 selectedMesh.renderingLayerMask = 1u << 0;
 
             selectedCell = null;
             selectedMesh = null;
 
+            OffSelect?.Invoke();
+
             Debug.Log("UnSelect");
         }
 
+
+        private bool onUIBlock = false; //Клик по UI игнорируем
         public async UniTask CheckEmptySpaceByClick()
         {
             Debug.Log("Start checking empty space for unselecting cells");
 
             while (true)
             {
+                onUIBlock = EventSystem.current.IsPointerOverGameObject(); //Клик по UI игнорируем
+
                 if (Input.GetMouseButtonDown(0))
                 {
                     Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);

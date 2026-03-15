@@ -8,14 +8,14 @@ namespace Map.Domain
         public BiomeType biome;
 
         private static readonly Vector3Int[] directions = new Vector3Int[]
-{
+        {
             new Vector3Int(1, -1, 0),  // верхний правый
             new Vector3Int(1, 0, -1),  // правый
             new Vector3Int(0, 1, -1),  // нижний правый
             new Vector3Int(-1, 1, 0),  // нижний левый
             new Vector3Int(-1, 0, 1),  // левый
             new Vector3Int(0, -1, 1)   // верхний левый
-};
+        };
 
         public Hex(int q, int r, int s)
         {

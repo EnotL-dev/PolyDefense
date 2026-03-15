@@ -41,7 +41,7 @@ namespace Map.Presentation
 
                 Bounds bounds = newCell.GetComponent<Renderer>().bounds;
                 float hexRadius = bounds.size.x / Mathf.Sqrt(3f);
-                newCell.transform.position = HexToWorldPosition(hex.q, hex.r, hexRadius);
+                newCell.transform.position = HexLayoutConverter.HexToWorldPosition(hex.q, hex.r, hexRadius);
 
                 newCell.GetComponent<HexView>().Bind(hex);
 
@@ -51,13 +51,6 @@ namespace Map.Presentation
 
                 await UniTask.Delay(50);
             }
-        }
-
-        private Vector3 HexToWorldPosition(int q, int r, float hexRadius)
-        {
-            float x = hexRadius * (Mathf.Sqrt(3f) * q + Mathf.Sqrt(3f) / 2f * r);
-            float z = hexRadius * (3f / 2f * r);
-            return new Vector3(x, 0, z);
         }
 
         private float duration = 0.4f;

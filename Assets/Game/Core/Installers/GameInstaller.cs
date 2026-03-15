@@ -4,6 +4,11 @@ using Zenject;
 using Map.Generator;
 using Map.Services;
 using Map.Presentation;
+using UI.WorldUI;
+using UI.Controllers;
+using Economy.Services;
+using Economy.Domain;
+using Economy.Presentation;
 
 namespace Core.Installers
 {
@@ -14,6 +19,8 @@ namespace Core.Installers
             BindStateMachine();
             BindStates();
             BindMap();
+            BindEconomy();
+            BindUI();
             BindBootstrap();
         }
 
@@ -48,6 +55,28 @@ namespace Core.Installers
             Container.Bind<IMapService>()
                      .To<MapService>()
                      .AsSingle();
+        }
+
+        private void BindEconomy()
+        {
+            Container.Bind<ResourceBase>().AsSingle().NonLazy(); //Создаст без запроса
+
+            Container.Bind<IEconomyService>()
+                     .To<EconomyService>()
+                     .AsSingle();
+
+            Container.Bind<EconomyView>()
+             .FromComponentInHierarchy()
+             .AsSingle();
+        }
+
+        private void BindUI()
+        {
+            Container.Bind<HexSelectedPanelView>()
+             .FromComponentInHierarchy()
+             .AsSingle();
+
+            Container.Bind<HexPanelController>().AsSingle().NonLazy(); //Создаст без запроса
         }
 
         private void BindBootstrap()
