@@ -8,6 +8,6 @@ namespace Combat
         public GameObject prefab;
 
         public float moveSpeed = 2f;
-        public float attackDelay = 1f;
+        public int damagePerSecond = 5;
     }
 }

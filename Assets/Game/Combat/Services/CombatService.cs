@@ -1,4 +1,4 @@
-using Construction.Config;
+using Construction.Presentation;
 using DG.Tweening;
 using UnityEngine;
 
@@ -6,15 +6,19 @@ namespace Combat
 {
     public class CombatService
     {
-        public void Attack(Enemy enemy, Building target)
+        public void DealDamage(BuildingView target, int dps)
         {
-            Debug.Log("Atack");
-
-            enemy.transform
-                .DOPunchScale(Vector3.one * 0.2f, 0.3f, 5, 0.5f);
+            target.Building.TakeDamage(dps);
 
             target.transform
-                .DOPunchPosition(Vector3.up * 0.3f, 0.3f);
+                .DOPunchPosition(Vector3.up * 0.3f, 0.2f);
+
+            Debug.Log($"Building HP: {target.Building.currentHp}");
+
+            if (!target.Building.IsAlive)
+            {
+                Object.Destroy(target.gameObject);
+            }
         }
     }
 }

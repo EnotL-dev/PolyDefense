@@ -1,4 +1,5 @@
 using Construction.Config;
+using Construction.Presentation;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
@@ -44,6 +45,12 @@ namespace Combat
 
             var path = navigation.GetPath(transform.position, target.transform.position);
 
+            if (path.Count == 0)
+            {
+                Debug.Log("No path");
+                return;
+            }
+
             foreach (var point in path)
             {
                 RotateTo(point);
@@ -54,7 +61,7 @@ namespace Combat
                     .AsyncWaitForCompletion();
             }
 
-            Attack(target);
+            AttackLoop(target).Forget();
         }
 
         void RotateTo(Vector3 point)
@@ -70,9 +77,16 @@ namespace Combat
             }
         }
 
-        void Attack(Building target)
+        async UniTaskVoid AttackLoop(BuildingView target)
         {
-            combat.Attack(this, target);
+            while (target != null && target.Building.IsAlive)
+            {
+                combat.DealDamage(target, config.damagePerSecond);
+
+                await UniTask.Delay(1000);
+            }
+
+            Debug.Log("Target destroyed");
         }
     }
 }

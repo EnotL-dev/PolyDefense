@@ -59,6 +59,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: efceb07722f719e4b82969ddb7983d90, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7091037018244850447}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: efceb07722f719e4b82969ddb7983d90, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -9159055587727061131}
   m_SourcePrefab: {fileID: 100100000, guid: efceb07722f719e4b82969ddb7983d90, type: 3}
 --- !u!1 &1354779387104025171 stripped
 GameObject:
@@ -77,3 +80,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32657df4e38254f43a833edbd3e9056c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Map.Presentation.HexView
+--- !u!114 &-9159055587727061131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354779387104025171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2cdd184626b1684b883e44f38a038c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Construction.Presentation.BuildingView
