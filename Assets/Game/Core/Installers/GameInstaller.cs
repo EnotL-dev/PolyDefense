@@ -24,6 +24,7 @@ namespace Core.Installers
             BindEconomy();
             BindBuild();
             BindUI();
+            BindCombat();
             BindBootstrap();
         }
 
@@ -91,16 +92,7 @@ namespace Core.Installers
 
         private void BindCombat()
         {
-            Container.Bind<EnemyFactory>().AsSingle();
-            Container.Bind<CombatService>().AsSingle();
-            Container.Bind<NavigationService>().AsSingle();
-            Container.Bind<TargetingService>().AsSingle();
-
-            Container.BindInterfacesTo<CombatDebugService>().AsSingle();
-
-            Container.Bind<EnemyConfig>()
-                .FromScriptableObjectResource("Combat/EnemyConfig")
-                .AsSingle();
+            
         }
 
         private void BindBootstrap()
