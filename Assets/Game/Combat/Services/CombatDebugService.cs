@@ -20,8 +20,17 @@ namespace Combat
         {
             if (Input.GetKeyDown(KeyCode.R))
             {
-                factory.Create(config, new Vector3(0, 0, -5));
+                SpawnEnemy();
             }
+        }
+
+        void SpawnEnemy()
+        {
+            Vector3 spawnPos = new Vector3(0, 0, -5);
+
+            factory.Create(config, spawnPos);
+
+            Debug.Log("Enemy spawned");
         }
     }
 }

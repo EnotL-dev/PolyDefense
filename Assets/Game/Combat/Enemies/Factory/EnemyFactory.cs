@@ -12,9 +12,14 @@ namespace Combat
             this.container = container;
         }
 
-        public Enemy Create(EnemyConfig config, Vector3 pos)
+        public Enemy Create(EnemyConfig config, Vector3 position)
         {
-            var obj = container.InstantiatePrefab(config.prefab, pos, Quaternion.identity, null);
+            var obj = container.InstantiatePrefab(
+               config.prefab,
+               position,
+               Quaternion.identity,
+               null
+               );
 
             var enemy = obj.GetComponent<Enemy>();
             enemy.Init(config);

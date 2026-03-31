@@ -1,27 +1,19 @@
 using System.Linq;
 using UnityEngine;
-using Construction.Services;
-using Construction.Presentation;
+using Construction.Config;
 
 namespace Combat
 {
     public class TargetingService
     {
-        private readonly BuildingRegistry registry;
-
-        public TargetingService(BuildingRegistry registry)
+        public Building GetTarget(Vector3 from)
         {
-            this.registry = registry;
-        }
+            var buildings = Object.FindObjectsOfType<Building>();
 
-        public BuildingView GetTarget(Vector3 from)
-        {
-            var all = registry.GetAll();
-
-            if (all.Count == 0)
+            if (buildings.Length == 0)
                 return null;
 
-            return all
+            return buildings
                 .OrderBy(b => Vector3.Distance(from, b.transform.position))
                 .First();
         }
