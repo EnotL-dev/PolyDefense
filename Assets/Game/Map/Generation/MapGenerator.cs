@@ -1,3 +1,4 @@
+using Construction.Config;
 using Map.Domain;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,14 +25,6 @@ namespace Map.Generator
                 }
             }
 
-            foreach (var hex in hexagons)
-            {
-                for (int dir = 0; dir < 6; dir++)
-                {
-                    Vector3Int neighborCoord = hex.GetNeighborCoordinate(dir);
-                }
-            }
-
             SetBioms(hexagons);
             return new GridData(hexagons);
         }
@@ -52,9 +45,11 @@ namespace Map.Generator
             }
 
             float averageHeight = heights.Average();
+            InitTownHall(hexagons[hexagons.Count/2]);
             for (int i = 0; i < heights.Length; i++)
             {
-                hexagons[i].biome = SetBiom(heights[i], averageHeight);
+                if(i != hexagons.Count / 2)
+                    hexagons[i].biome = SetBiom(heights[i], averageHeight);
             }
         }
 
@@ -64,6 +59,7 @@ namespace Map.Generator
             // Ниже среднего на >45% - озеро
             // Выше среднего на >10% - леса
             // Ниже среднего на >25% - поля
+            // В диапазоне 5% - деревня
             // Остальное обычные клетки
 
             if (height > averageHeight * 1.45f)
@@ -76,7 +72,17 @@ namespace Map.Generator
             else if (height < averageHeight * 0.75f)
                 return BiomeType.Plains;
 
+            if (height > averageHeight * 0.95f && height < averageHeight * 1.05f)
+                return BiomeType.Village;
+
             return BiomeType.Basic;
+        }
+
+        private void InitTownHall(Hex hex) //Инициализируем Ратушу
+        {
+            hex.biome = BiomeType.TownHall; 
+            BuildingsDataBase buildingsDataBase = Resources.Load<BuildingsDataBase>("Building/BuildingsDataBase");
+            hex.building = buildingsDataBase.buildings.Find(building => building.biome == BiomeType.TownHall);
         }
     }
 }

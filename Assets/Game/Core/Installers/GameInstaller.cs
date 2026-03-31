@@ -9,6 +9,8 @@ using UI.Controllers;
 using Economy.Services;
 using Economy.Domain;
 using Economy.Presentation;
+using Construction.Services;
+using Combat;
 
 namespace Core.Installers
 {
@@ -20,6 +22,7 @@ namespace Core.Installers
             BindStates();
             BindMap();
             BindEconomy();
+            BindBuild();
             BindUI();
             BindBootstrap();
         }
@@ -70,6 +73,13 @@ namespace Core.Installers
              .AsSingle();
         }
 
+        private void BindBuild()
+        {
+            Container.Bind<IBuildService>()
+                     .To<BuildService>()
+                     .AsSingle();
+        }
+
         private void BindUI()
         {
             Container.Bind<HexSelectedPanelView>()
@@ -77,6 +87,20 @@ namespace Core.Installers
              .AsSingle();
 
             Container.Bind<HexPanelController>().AsSingle().NonLazy(); //Создаст без запроса
+        }
+
+        private void BindCombat()
+        {
+            Container.Bind<EnemyFactory>().AsSingle();
+            Container.Bind<CombatService>().AsSingle();
+            Container.Bind<NavigationService>().AsSingle();
+            Container.Bind<TargetingService>().AsSingle();
+
+            Container.BindInterfacesTo<CombatDebugService>().AsSingle();
+
+            Container.Bind<EnemyConfig>()
+                .FromScriptableObjectResource("Combat/EnemyConfig")
+                .AsSingle();
         }
 
         private void BindBootstrap()

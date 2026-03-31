@@ -14,12 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Map.Presentation.HexConfig
   hexCellDatas:
   - biome: 0
-    hexProp: {fileID: 8702244670048124347, guid: 828cd934deaa53f4b9b4bcbd3067a5e3, type: 3}
+    hexProp: {fileID: 1424005017930024428, guid: 2bc9cf5a4b832f14a9a44ca695269c4e, type: 3}
   - biome: 1
-    hexProp: {fileID: 5930956351797851037, guid: 33012deabca640a409332f989f89a839, type: 3}
+    hexProp: {fileID: 8702244670048124347, guid: 828cd934deaa53f4b9b4bcbd3067a5e3, type: 3}
   - biome: 2
-    hexProp: {fileID: 8754667834040326475, guid: 7b5600471a199d24fb4855f16e269f2a, type: 3}
+    hexProp: {fileID: 5930956351797851037, guid: 33012deabca640a409332f989f89a839, type: 3}
   - biome: 3
-    hexProp: {fileID: 5737944790519885981, guid: c6a6f90e0a99be3458250d89c9e4976c, type: 3}
+    hexProp: {fileID: 8754667834040326475, guid: 7b5600471a199d24fb4855f16e269f2a, type: 3}
   - biome: 4
+    hexProp: {fileID: 5737944790519885981, guid: c6a6f90e0a99be3458250d89c9e4976c, type: 3}
+  - biome: 5
     hexProp: {fileID: 2232899791434460029, guid: 76efa41efa95f2045b8c265d995ba29d, type: 3}
+  - biome: 6
+    hexProp: {fileID: 1710096059758765477, guid: dcee294b57e9f3e46a47853bf1954b01, type: 3}

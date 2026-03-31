@@ -79,7 +79,8 @@ namespace Map.Services
 
             while (true)
             {
-                onUIBlock = EventSystem.current.IsPointerOverGameObject(); //Клик по UI игнорируем
+                if(EventSystem.current)
+                    onUIBlock = EventSystem.current.IsPointerOverGameObject(); //Клик по UI игнорируем
 
                 if (Input.GetMouseButtonDown(0))
                 {

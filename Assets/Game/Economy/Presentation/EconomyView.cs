@@ -12,7 +12,6 @@ namespace Economy.Presentation
         [SerializeField] private TextMeshProUGUI textIron;
         [SerializeField] private TextMeshProUGUI textWood;
         [SerializeField] private TextMeshProUGUI textFood;
-        [SerializeField] private TextMeshProUGUI textPeople;
         [SerializeField] private TextMeshProUGUI textEnergy;
 
         public void UpdateTexts(ResourceBase resourceBase)
@@ -21,7 +20,6 @@ namespace Economy.Presentation
             textIron.text = $"{resourceBase.unitIron.value} / \n{resourceBase.unitIron.limit}";
             textWood.text = $"{resourceBase.unitWood.value} / \n{resourceBase.unitWood.limit}";
             textFood.text = $"{resourceBase.unitFood.value} / \n{resourceBase.unitFood.limit}";
-            textPeople.text = $"{resourceBase.unitPeople.value} / \n{resourceBase.unitPeople.limit}";
 
             float multiply = resourceBase.unitEnergy.value / 10;
             textEnergy.text = $"{1+multiply} X";

@@ -16,6 +16,8 @@
                     return "Mountains";
                 case BiomeType.Lake:
                     return "Lake";
+                case BiomeType.Village:
+                    return "Village";
                 default:
                     return "None";
             }

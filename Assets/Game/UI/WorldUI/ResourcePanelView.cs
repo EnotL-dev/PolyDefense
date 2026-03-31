@@ -9,7 +9,7 @@ namespace UI.WorldUI
         public Image icon;
         public TextMeshProUGUI textMesh;
 
-        public void Instantiate(Sprite ico, string text)
+        public void Init(Sprite ico, string text)
         {
             icon.sprite = ico;
             textMesh.text = text;

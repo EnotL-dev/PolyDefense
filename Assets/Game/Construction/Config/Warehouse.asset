@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11e7dbcab88c6b24d89ffe708f108c4e, type: 3}
+  m_Name: Warehouse
+  m_EditorClassIdentifier: Assembly-CSharp::Construction.Config.Building
+  title: Warehouse
+  biome: 6
+  prefabCell: {fileID: 6561970995135221144, guid: 072f0d3b50c93d448aa47e10ad5c0bdb, type: 3}
+  resourcesCost:
+  - rid: 3728002285802881206
+  - rid: 3728002285802881207
+  resourcesIncome: []
+  resourcesAddLimit:
+  - rid: 3728002285802881210
+  - rid: 3728002285802881211
+  - rid: 3728002285802881212
+  - rid: 3728002285802881208
+  references:
+    version: 2
+    RefIds:
+    - rid: 3728002285802881206
+      type: {class: UnitWood, ns: Economy.Domain, asm: Assembly-CSharp}
+      data:
+        value: 150
+        limit: 0
+    - rid: 3728002285802881207
+      type: {class: UnitFood, ns: Economy.Domain, asm: Assembly-CSharp}
+      data:
+        value: 100
+        limit: 0
+    - rid: 3728002285802881208
+      type: {class: UnitEnergy, ns: Economy.Domain, asm: Assembly-CSharp}
+      data:
+        value: 0
+        limit: 10
+    - rid: 3728002285802881210
+      type: {class: UnitIron, ns: Economy.Domain, asm: Assembly-CSharp}
+      data:
+        value: 0
+        limit: 250
+    - rid: 3728002285802881211
+      type: {class: UnitWood, ns: Economy.Domain, asm: Assembly-CSharp}
+      data:
+        value: 0
+        limit: 250
+    - rid: 3728002285802881212
+      type: {class: UnitFood, ns: Economy.Domain, asm: Assembly-CSharp}
+      data:
+        value: 0
+        limit: 400

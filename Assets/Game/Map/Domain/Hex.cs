@@ -1,3 +1,4 @@
+using Construction.Config;
 using UnityEngine;
 
 namespace Map.Domain
@@ -6,6 +7,7 @@ namespace Map.Domain
     {
         public int q, r, s;
         public BiomeType biome;
+        public Building building = null;
 
         private static readonly Vector3Int[] directions = new Vector3Int[]
         {

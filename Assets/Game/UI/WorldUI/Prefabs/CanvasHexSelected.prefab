@@ -92,8 +92,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
-  m_fontSizeBase: 72
+  m_fontSize: 64
+  m_fontSizeBase: 64
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -734,7 +734,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 731709559083834121}
         m_TargetAssemblyTypeName: UI.WorldUI.HexSelectedPanelView, Assembly-CSharp
-        m_MethodName: TryBuild
+        m_MethodName: Build
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -962,7 +962,6 @@ MonoBehaviour:
   textDescription: {fileID: 573215173560318205}
   panelGain: {fileID: 3534824256531335306}
   panelCost: {fileID: 8517589315271131799}
-  panelBuild: {fileID: 0}
   resourcePanelPrefab: {fileID: 2780537075584860142, guid: d29ad5d6c8ae09c429a6bffc9d64507e, type: 3}
 --- !u!1 &8306743214860435448
 GameObject:

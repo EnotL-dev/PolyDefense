@@ -36,21 +36,26 @@ namespace Map.Presentation
 
                 GameObject newCell = container.InstantiatePrefab(currentHexData.hexProp);
 
-                newCell.transform.SetParent(mapParentContainerOfGrid.transform);
-                newCell.AddComponent<MeshCollider>();
-
-                Bounds bounds = newCell.GetComponent<Renderer>().bounds;
-                float hexRadius = bounds.size.x / Mathf.Sqrt(3f);
-                newCell.transform.position = HexLayoutConverter.HexToWorldPosition(hex.q, hex.r, hexRadius);
-
-                newCell.GetComponent<HexView>().Bind(hex);
-
-                cellsOfGrid.Add(hex, newCell);
-
-                AnimateAppearCell(newCell.transform);
+                CreateNewCell(hex, newCell);
 
                 await UniTask.Delay(50);
             }
+        }
+
+        private void CreateNewCell(Hex hex, GameObject cell)
+        {
+            cell.transform.SetParent(mapParentContainerOfGrid.transform);
+            cell.AddComponent<MeshCollider>();
+
+            Bounds bounds = cell.GetComponent<Renderer>().bounds;
+            float hexRadius = bounds.size.x / Mathf.Sqrt(3f);
+            cell.transform.position = HexLayoutConverter.HexToWorldPosition(hex.q, hex.r, hexRadius);
+
+            cell.GetComponent<HexView>().Bind(hex);
+
+            cellsOfGrid.Add(hex, cell);
+
+            AnimateAppearCell(cell.transform);
         }
 
         private float duration = 0.4f;
@@ -59,6 +64,15 @@ namespace Map.Presentation
         {
             newCell.localScale = Vector3.zero;
             newCell.transform.DOScale(Vector3.one, duration).SetEase(easeType);
+        }
+
+        public void ChangeCell(Hex hex, GameObject cell)
+        {
+            Destroy(cellsOfGrid[hex]);
+            cellsOfGrid.Remove(hex);
+
+            GameObject newCell = container.InstantiatePrefab(cell);
+            CreateNewCell(hex, newCell);
         }
     }
 }

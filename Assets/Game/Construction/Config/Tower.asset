@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11e7dbcab88c6b24d89ffe708f108c4e, type: 3}
+  m_Name: Tower
+  m_EditorClassIdentifier: Assembly-CSharp::Construction.Config.Building
+  title: Defense tower
+  biome: 1
+  prefabCell: {fileID: 1205851629294616445, guid: 6b695f240b699464abd10c262dad6380, type: 3}
+  resourcesCost:
+  - rid: 3728002285802881213
+  - rid: 3728002285802881214
+  - rid: 3728002285802881215
+  resourcesIncome: []
+  resourcesAddLimit: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 3728002285802881213
+      type: {class: UnitIron, ns: Economy.Domain, asm: Assembly-CSharp}
+      data:
+        value: 50
+        limit: 0
+    - rid: 3728002285802881214
+      type: {class: UnitWood, ns: Economy.Domain, asm: Assembly-CSharp}
+      data:
+        value: 100
+        limit: 0
+    - rid: 3728002285802881215
+      type: {class: UnitFood, ns: Economy.Domain, asm: Assembly-CSharp}
+      data:
+        value: 40
+        limit: 0
