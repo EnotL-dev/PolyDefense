@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1d507c2f3618e5459e56fb8d56f794a, type: 3}
+  m_Name: HexConfig
+  m_EditorClassIdentifier: Assembly-CSharp::Map.Presentation.HexConfig
+  hexCellDatas:
+  - biome: 0
+    hexProp: {fileID: 4583449026913680597, guid: cfddb8a05765e6440af3a07e4d6ec92b, type: 3}
+  - biome: 1
+    hexProp: {fileID: 719243990067543059, guid: 828cd934deaa53f4b9b4bcbd3067a5e3, type: 3}
+  - biome: 2
+    hexProp: {fileID: 3009906633553452103, guid: 33012deabca640a409332f989f89a839, type: 3}
+  - biome: 3
+    hexProp: {fileID: 441706736224948844, guid: 7b5600471a199d24fb4855f16e269f2a, type: 3}
+  - biome: 4
+    hexProp: {fileID: 7442656912625838037, guid: c6a6f90e0a99be3458250d89c9e4976c, type: 3}
+  - biome: 5
+    hexProp: {fileID: 1001594731598583820, guid: 76efa41efa95f2045b8c265d995ba29d, type: 3}
+  - biome: 6
+    hexProp: {fileID: 3944589813397084506, guid: dcee294b57e9f3e46a47853bf1954b01, type: 3}

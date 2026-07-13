@@ -1,0 +1,80 @@
+using Map.Domain;
+using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
+using Zenject;
+
+namespace Map.Generator
+{
+    public class MapGenerator : IMapGenerator
+    {
+        public GridData GenerateGrid(int radius)
+        {
+            Dictionary<Vector3Int, Hex> hexMap = new Dictionary<Vector3Int, Hex>();
+            List<Hex> hexagons = new List<Hex>();
+
+            for (int q = -radius; q <= radius; q++)
+            {
+                for (int r = Mathf.Max(-radius, -q - radius);
+                         r <= Mathf.Min(radius, -q + radius); r++)
+                {
+                    int s = -q - r;
+                    Hex hex = new Hex(q, r, s);
+                    hexMap[new Vector3Int(q, r, s)] = hex;
+                    hexagons.Add(hex);
+                }
+            }
+
+            SetBioms(hexagons);
+            return new GridData(hexagons);
+        }
+
+        private void SetBioms(List<Hex> hexagons)
+        {
+            float offsetX = Random.Range(10.01f, 99.99f);
+            float offsetY = Random.Range(10.01f, 99.99f);
+
+            float[] heights = new float[hexagons.Count];
+            for (int i = 0; i < hexagons.Count; i++)
+            {
+                Hex hex = hexagons[i];
+                heights[i] = Mathf.PerlinNoise(
+                    offsetX + hex.q * 0.31f,
+                    offsetY + hex.r * 0.31f
+                );
+            }
+
+            float averageHeight = heights.Average();
+            for (int i = 0; i < heights.Length; i++)
+            {
+                if (i != hexagons.Count / 2)
+                    hexagons[i].biome = SetBiom(heights[i], averageHeight);
+            }
+        }
+
+        private BiomeType SetBiom(float height, float averageHeight)
+        {
+            // Выше среднего на >40% - горы
+            // Ниже среднего на >45% - озеро
+            // Выше среднего на >15% - леса
+            // Ниже среднего на >20% - поля
+            // В диапазоне 4% - деревня
+            // Остальное обычные клетки
+
+            if (height > averageHeight * 1.4f)
+                return BiomeType.Mountain;
+            else if (height > averageHeight * 1.15f)
+                return BiomeType.Forest;
+
+            if (height < averageHeight * 0.55f)
+                return BiomeType.Lake;
+            else if (height < averageHeight * 0.8f)
+                return BiomeType.Plains;
+
+            if (height > averageHeight * 0.96f && height < averageHeight * 1.04f)
+                return BiomeType.Village;
+
+            return BiomeType.Basic;
+        }
+    }
+}
