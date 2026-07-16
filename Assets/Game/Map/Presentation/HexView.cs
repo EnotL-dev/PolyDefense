@@ -27,12 +27,6 @@ namespace Map.Presentation
                 canvasGroup.alpha = 0;
         }
 
-        //private event Action<>
-        public void BindDefenseBuilding()
-        {
-
-        }
-
         private void OnMouseEnter()
         {
             hexSelectionService.Hover(cell, GetComponent<MeshRenderer>());

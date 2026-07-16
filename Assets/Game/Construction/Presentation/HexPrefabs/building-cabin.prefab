@@ -105,7 +105,7 @@ RectTransform:
   m_Father: {fileID: 7040094702335185855}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 3.9500122, y: 0}
   m_SizeDelta: {x: 17.92, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -556,7 +556,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b48612c6d866e824d952afae5faa7801, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

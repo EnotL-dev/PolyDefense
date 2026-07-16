@@ -5,6 +5,7 @@ using Cysharp.Threading.Tasks;
 using Zenject;
 using System.Collections.Generic;
 using DG.Tweening;
+using Construction.Presentation;
 
 namespace Map.Presentation
 {
@@ -12,7 +13,6 @@ namespace Map.Presentation
     {
         [Inject] IMapService mapService;
         [Inject] DiContainer container;
-
         GridData gridData => mapService.CurrentMap;
 
         [SerializeField] private HexConfig hexConfig;

@@ -5,6 +5,12 @@ using Map.Generator;
 using Map.Services;
 using Map.Presentation;
 using UI.Controllers;
+using UI.WorldUI;
+using Construction.Services;
+using Economy.Domain;
+using Economy.Services;
+using Economy.Presentation;
+using Construction.Config;
 
 namespace Core.Installers
 {
@@ -18,7 +24,11 @@ namespace Core.Installers
             BindStateMachine();
             BindStates();
 
+            Container.Bind<BuildingFactory>().AsSingle(); // для генерации карты
             BindMap();
+
+            BindEconomy();
+            BindBuild();
             BindUI();
 
             BindBootstrap();
@@ -53,9 +63,35 @@ namespace Core.Installers
                      .AsSingle();
         }
 
+        private void BindEconomy()
+        {
+            Container.Bind<ResourceBase>().AsSingle().NonLazy(); //Создаст без запроса
+
+            Container.Bind<IEconomyService>()
+                     .To<EconomyService>()
+                     .AsSingle();
+
+            Container.Bind<EconomyView>()
+                     .FromComponentInHierarchy()
+                     .AsSingle();
+        }
+
+        private void BindBuild()
+        {
+            Container.Bind<IBuildService>()
+                     .To<BuildService>()
+                     .AsSingle();
+        }
+
         private void BindUI()
         {
             Container.BindInterfacesAndSelfTo<HexSelectionService>().AsSingle(); //Биндит себя и Init/Dispose
+
+            Container.Bind<HexSelectedPanelView>()
+                    .FromComponentInHierarchy()
+                    .AsSingle();
+
+            Container.Bind<HexPanelController>().AsSingle().NonLazy();
         }
 
         private void BindBootstrap()

@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d80cc3df147225e4990f1e3491607eba, type: 3}
+  m_Name: Warehouse
+  m_EditorClassIdentifier: Assembly-CSharp::Construction.Config.Building
+  buildingName: Warehouse
+  description: The Warehouse increases the maximum amount of resources. Energy will
+    increase resource growth at the end of the day by 10%.
+  currentHp: 100
+  maxHp: 300
+  biome: 6
+  prefabCell: {fileID: 4112250884055633629, guid: 7f52822072b1cf749a919851657223a8, type: 3}
+  resourcesCost:
+  - rid: 9052657826008662092
+  - rid: 9052657826008662093
+  - rid: 9052657826008662094
+  resourcesIncome: []
+  resourcesAddLimit:
+  - rid: 9052657826008662095
+  - rid: 9052657826008662096
+  - rid: 9052657826008662097
+  - rid: 9052657826008662098
+  references:
+    version: 2
+    RefIds:
+    - rid: 9052657826008662092
+      type: {class: UnitGold, ns: Economy.Domain, asm: Assembly-CSharp}
+      data:
+        value: 20
+        limit: 0
+    - rid: 9052657826008662093
+      type: {class: UnitWood, ns: Economy.Domain, asm: Assembly-CSharp}
+      data:
+        value: 150
+        limit: 0
+    - rid: 9052657826008662094
+      type: {class: UnitFood, ns: Economy.Domain, asm: Assembly-CSharp}
+      data:
+        value: 100
+        limit: 0
+    - rid: 9052657826008662095
+      type: {class: UnitIron, ns: Economy.Domain, asm: Assembly-CSharp}
+      data:
+        value: 0
+        limit: 150
+    - rid: 9052657826008662096
+      type: {class: UnitWood, ns: Economy.Domain, asm: Assembly-CSharp}
+      data:
+        value: 0
+        limit: 250
+    - rid: 9052657826008662097
+      type: {class: UnitFood, ns: Economy.Domain, asm: Assembly-CSharp}
+      data:
+        value: 0
+        limit: 300
+    - rid: 9052657826008662098
+      type: {class: UnitEnergy, ns: Economy.Domain, asm: Assembly-CSharp}
+      data:
+        value: 0
+        limit: 10

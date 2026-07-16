@@ -1,3 +1,4 @@
+using Construction.Config;
 using System;
 using UnityEngine;
 
@@ -7,6 +8,7 @@ namespace Map.Domain
     {
         public int q, r, s;
         public BiomeType biome;
+        public Building building { get; private set; }
         public Action<int, int> OnHealthChanged;
 
         private static readonly Vector3Int[] directions = new Vector3Int[]
@@ -30,6 +32,18 @@ namespace Map.Domain
         {
             Vector3Int dir = directions[direction];
             return new Vector3Int(q + dir.x, r + dir.y, s + dir.z);
+        }
+        
+        public void SetBuilding(Building building) => this.building = building;
+
+        public void DestroyBuilding() => building = null;
+
+        public void TakeBuildingDamage(int damage)
+        {
+            if (!building) return;
+
+            building.TakeDamage(damage);
+            OnHealthChanged?.Invoke(building.currentHp, building.maxHp);
         }
     }
 }

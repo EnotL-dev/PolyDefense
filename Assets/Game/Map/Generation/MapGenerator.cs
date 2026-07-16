@@ -1,3 +1,4 @@
+using Construction.Config;
 using Map.Domain;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,8 @@ namespace Map.Generator
 {
     public class MapGenerator : IMapGenerator
     {
+        [Inject] private BuildingFactory buildingFactory;
+
         public GridData GenerateGrid(int radius)
         {
             Dictionary<Vector3Int, Hex> hexMap = new Dictionary<Vector3Int, Hex>();
@@ -45,6 +48,7 @@ namespace Map.Generator
             }
 
             float averageHeight = heights.Average();
+            InitTownHall(hexagons[hexagons.Count / 2]);
             for (int i = 0; i < heights.Length; i++)
             {
                 if (i != hexagons.Count / 2)
@@ -75,6 +79,14 @@ namespace Map.Generator
                 return BiomeType.Village;
 
             return BiomeType.Basic;
+        }
+
+        private void InitTownHall(Hex hex) //Инициализируем Ратушу
+        {
+            hex.biome = BiomeType.TownHall;
+            BuildingsDataBase buildingsDataBase = Resources.Load<BuildingsDataBase>("Building/BuildingsDataBase");
+            Building original = buildingsDataBase.buildings.Find(building => building.biome == BiomeType.TownHall);
+            hex.SetBuilding(buildingFactory.Create(original));
         }
     }
 }
