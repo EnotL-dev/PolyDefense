@@ -2,7 +2,7 @@
 
 
 
-!\[demo](Assets/Demo/demo.gif)
+!\[demo](./Assets/Demo/demo.gif)
 
 
 
