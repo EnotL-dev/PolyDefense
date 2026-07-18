@@ -66,7 +66,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 7ca61daa26ec9e54e8c03ab085829064, type: 3}
+    m_Font: {fileID: 12800000, guid: 35ad749c58a3ed0488a209683a41d05b, type: 3}
     m_FontSize: 32
     m_FontStyle: 0
     m_BestFit: 0
@@ -221,8 +221,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 1X
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 06155f8529ad54c4399c4e258f98ca7c, type: 2}
+  m_sharedMaterial: {fileID: -2271900817629660711, guid: 06155f8529ad54c4399c4e258f98ca7c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -357,7 +357,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 7ca61daa26ec9e54e8c03ab085829064, type: 3}
+    m_Font: {fileID: 12800000, guid: 35ad749c58a3ed0488a209683a41d05b, type: 3}
     m_FontSize: 32
     m_FontStyle: 0
     m_BestFit: 0
@@ -481,7 +481,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 7ca61daa26ec9e54e8c03ab085829064, type: 3}
+    m_Font: {fileID: 12800000, guid: 35ad749c58a3ed0488a209683a41d05b, type: 3}
     m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
@@ -561,7 +561,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 7ca61daa26ec9e54e8c03ab085829064, type: 3}
+    m_Font: {fileID: 12800000, guid: 35ad749c58a3ed0488a209683a41d05b, type: 3}
     m_FontSize: 64
     m_FontStyle: 0
     m_BestFit: 0
@@ -640,7 +640,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 7ca61daa26ec9e54e8c03ab085829064, type: 3}
+    m_Font: {fileID: 12800000, guid: 35ad749c58a3ed0488a209683a41d05b, type: 3}
     m_FontSize: 64
     m_FontStyle: 0
     m_BestFit: 0
@@ -663,13 +663,14 @@ GameObject:
   m_Component:
   - component: {fileID: 3647257081901484610}
   - component: {fileID: 4354366723948039792}
+  - component: {fileID: 8760849321570946959}
   m_Layer: 5
   m_Name: GameStart_Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3647257081901484610
 RectTransform:
   m_ObjectHideFlags: 0
@@ -702,6 +703,21 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!114 &8760849321570946959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3054884689588626861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2512a8012bac2c64299ba40ad41b04e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI.ScreenUI.StartPanelController
+  buttonTimeCycle: {fileID: 7908451958400580549}
+  panel: {fileID: 6225640239121645094}
+  panelRect: {fileID: 9217858992005193493}
 --- !u!1 &3328540572572211906
 GameObject:
   m_ObjectHideFlags: 0
@@ -768,7 +784,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 7ca61daa26ec9e54e8c03ab085829064, type: 3}
+    m_Font: {fileID: 12800000, guid: 35ad749c58a3ed0488a209683a41d05b, type: 3}
     m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
@@ -848,7 +864,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 7ca61daa26ec9e54e8c03ab085829064, type: 3}
+    m_Font: {fileID: 12800000, guid: 35ad749c58a3ed0488a209683a41d05b, type: 3}
     m_FontSize: 64
     m_FontStyle: 0
     m_BestFit: 0
@@ -1090,7 +1106,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8760849321570946959}
         m_TargetAssemblyTypeName: UI.ScreenUI.StartPanelController, Assembly-CSharp
         m_MethodName: Close_Panel
         m_Mode: 1
@@ -1246,7 +1262,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 7ca61daa26ec9e54e8c03ab085829064, type: 3}
+    m_Font: {fileID: 12800000, guid: 35ad749c58a3ed0488a209683a41d05b, type: 3}
     m_FontSize: 32
     m_FontStyle: 0
     m_BestFit: 0
@@ -1325,7 +1341,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 7ca61daa26ec9e54e8c03ab085829064, type: 3}
+    m_Font: {fileID: 12800000, guid: 35ad749c58a3ed0488a209683a41d05b, type: 3}
     m_FontSize: 32
     m_FontStyle: 0
     m_BestFit: 0
@@ -1688,7 +1704,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 7ca61daa26ec9e54e8c03ab085829064, type: 3}
+    m_Font: {fileID: 12800000, guid: 35ad749c58a3ed0488a209683a41d05b, type: 3}
     m_FontSize: 32
     m_FontStyle: 0
     m_BestFit: 0
@@ -1711,13 +1727,14 @@ GameObject:
   m_Component:
   - component: {fileID: 2023638504979974238}
   - component: {fileID: 4999971244824295373}
+  - component: {fileID: 2214667902037454366}
   m_Layer: 5
   m_Name: Lose_Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2023638504979974238
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1750,6 +1767,20 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!114 &2214667902037454366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6902042576475047070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37126e79122492a4ab39aaf740e07e2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI.ScreenUI.LosePanelController
+  panel: {fileID: 5104652777641255227}
+  panelRect: {fileID: 4763331650083161707}
 --- !u!1 &7170714046154012214
 GameObject:
   m_ObjectHideFlags: 0
@@ -1871,7 +1902,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1068450522325762645}
         m_TargetAssemblyTypeName: UI.ScreenUI.WinPanelController, Assembly-CSharp
         m_MethodName: Exit_Init
         m_Mode: 1
@@ -1949,7 +1980,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 7ca61daa26ec9e54e8c03ab085829064, type: 3}
+    m_Font: {fileID: 12800000, guid: 35ad749c58a3ed0488a209683a41d05b, type: 3}
     m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
@@ -1983,7 +2014,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5504130470577777885
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2232,7 +2263,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1068450522325762645}
         m_TargetAssemblyTypeName: UI.ScreenUI.WinPanelController, Assembly-CSharp
         m_MethodName: Restart_Init
         m_Mode: 1
@@ -2310,7 +2341,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 7ca61daa26ec9e54e8c03ab085829064, type: 3}
+    m_Font: {fileID: 12800000, guid: 35ad749c58a3ed0488a209683a41d05b, type: 3}
     m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
@@ -2335,13 +2366,14 @@ GameObject:
   m_Component:
   - component: {fileID: 5049442936138418800}
   - component: {fileID: 7099606798181694437}
+  - component: {fileID: 1068450522325762645}
   m_Layer: 5
   m_Name: 'GameWin_Panel '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5049442936138418800
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2374,6 +2406,20 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!114 &1068450522325762645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8126473605646060231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5da87c141143de740bef0e6e68595e82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI.ScreenUI.WinPanelController
+  panel: {fileID: 6635145145138870080}
+  panelRect: {fileID: 6402248517858447376}
 --- !u!1 &8375911188133550165
 GameObject:
   m_ObjectHideFlags: 0
@@ -2495,7 +2541,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2214667902037454366}
         m_TargetAssemblyTypeName: UI.ScreenUI.LosePanelController, Assembly-CSharp
         m_MethodName: Restart_Init
         m_Mode: 1
@@ -2628,7 +2674,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2214667902037454366}
         m_TargetAssemblyTypeName: UI.ScreenUI.LosePanelController, Assembly-CSharp
         m_MethodName: Exit_Init
         m_Mode: 1
@@ -2649,7 +2695,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7065613583417322213}
-  - component: {fileID: 320197102301912722}
+  - component: {fileID: 4139746172005044095}
   m_Layer: 0
   m_Name: GameInstaller
   m_TagString: Untagged
@@ -2672,7 +2718,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2988502680137854803}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &320197102301912722
+--- !u!114 &4139746172005044095
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2683,7 +2729,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 02d56d71db566424fa97c9cad36deb3e, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GameInstaller
+  m_EditorClassIdentifier: Assembly-CSharp::Core.Installers.GameInstaller
 --- !u!1 &9146133315718822899
 GameObject:
   m_ObjectHideFlags: 0
@@ -2735,7 +2781,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Zenject::Zenject.SceneContext
   _scriptableObjectInstallers: []
   _monoInstallers:
-  - {fileID: 320197102301912722}
+  - {fileID: 4139746172005044095}
   _installerPrefabs: []
   _autoRun: 1
   OnPreInstall:
@@ -2853,6 +2899,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasHexSelected
       objectReference: {fileID: 0}
+    - target: {fileID: 6279236117798582858, guid: 599eda0caba28b64cae2c49eabfc05d9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2922,11 +2972,15 @@ PrefabInstance:
     - target: {fileID: 1459059964740501383, guid: 9278b8d1db3be044aab88cd82f2ee8d0, type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+      objectReference: {fileID: 11400000, guid: 06155f8529ad54c4399c4e258f98ca7c, type: 2}
     - target: {fileID: 1459059964740501383, guid: 9278b8d1db3be044aab88cd82f2ee8d0, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+      objectReference: {fileID: -2271900817629660711, guid: 06155f8529ad54c4399c4e258f98ca7c, type: 2}
+    - target: {fileID: 1459059964740501383, guid: 9278b8d1db3be044aab88cd82f2ee8d0, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1812669312997066986, guid: 9278b8d1db3be044aab88cd82f2ee8d0, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -3010,27 +3064,39 @@ PrefabInstance:
     - target: {fileID: 4358175771932088852, guid: 9278b8d1db3be044aab88cd82f2ee8d0, type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+      objectReference: {fileID: 11400000, guid: 06155f8529ad54c4399c4e258f98ca7c, type: 2}
     - target: {fileID: 4358175771932088852, guid: 9278b8d1db3be044aab88cd82f2ee8d0, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+      objectReference: {fileID: -2271900817629660711, guid: 06155f8529ad54c4399c4e258f98ca7c, type: 2}
+    - target: {fileID: 4358175771932088852, guid: 9278b8d1db3be044aab88cd82f2ee8d0, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6267173922594390695, guid: 9278b8d1db3be044aab88cd82f2ee8d0, type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+      objectReference: {fileID: 11400000, guid: 06155f8529ad54c4399c4e258f98ca7c, type: 2}
     - target: {fileID: 6267173922594390695, guid: 9278b8d1db3be044aab88cd82f2ee8d0, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+      objectReference: {fileID: -2271900817629660711, guid: 06155f8529ad54c4399c4e258f98ca7c, type: 2}
+    - target: {fileID: 6267173922594390695, guid: 9278b8d1db3be044aab88cd82f2ee8d0, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6598158607623454995, guid: 9278b8d1db3be044aab88cd82f2ee8d0, type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+      objectReference: {fileID: 11400000, guid: 06155f8529ad54c4399c4e258f98ca7c, type: 2}
     - target: {fileID: 6598158607623454995, guid: 9278b8d1db3be044aab88cd82f2ee8d0, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+      objectReference: {fileID: -2271900817629660711, guid: 06155f8529ad54c4399c4e258f98ca7c, type: 2}
+    - target: {fileID: 6598158607623454995, guid: 9278b8d1db3be044aab88cd82f2ee8d0, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6841655688890810714, guid: 9278b8d1db3be044aab88cd82f2ee8d0, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

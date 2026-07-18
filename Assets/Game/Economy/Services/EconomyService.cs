@@ -51,6 +51,9 @@ namespace Economy.Services
             }
 
             economyView.UpdateTexts(resourceBase);
+
+            if (resourceBase.unitGold.value >= 1000)
+                gameStateMachine.Enter<WinState>();
         }
 
         public void Reduce(List<ResourceUnit> resourceUnits)

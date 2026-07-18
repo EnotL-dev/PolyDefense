@@ -4,7 +4,7 @@ using Zenject;
 
 namespace Core.Bootstrap
 {
-    public class GameBootstrap : IInitializable
+    public class GameBootstrap
     {
         private readonly IGameStateMachine _stateMachine;
 
@@ -13,7 +13,7 @@ namespace Core.Bootstrap
             _stateMachine = stateMachine;
         }
 
-        public void Initialize()
+        public void Start_Game()
         {
             Application.targetFrameRate = 60;
             _stateMachine.Enter<BootstrapState>();

@@ -1,3 +1,4 @@
+using Combat.Defense;
 using Economy.Domain;
 using Map.Domain;
 using System.Collections.Generic;
@@ -16,6 +17,8 @@ namespace Construction.Config
 
         public BiomeType biome;
         public GameObject prefabCell;
+        [Space(5)]
+        [SerializeField] public DefenseConfig defenseConfig = null;
 
         [Space(5)]
         [SerializeReference, SubclassSelector] public List<ResourceUnit> resourcesCost;

@@ -1,3 +1,4 @@
+using Combat.Services;
 using Construction.Config;
 using Economy.Domain;
 using Economy.Services;
@@ -37,7 +38,7 @@ namespace Construction.Services
             economyService.AddLimit(building.resourcesAddLimit);
 
             Building newBuilding = buildingFactory.Create(building);
-            hex.SetBuilding(newBuilding); 
+            hex.SetBuilding(newBuilding);
 
             GameObject cell = building.prefabCell;
             mapView.ChangeCell(hex, cell);

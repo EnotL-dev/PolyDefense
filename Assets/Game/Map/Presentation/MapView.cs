@@ -57,6 +57,12 @@ namespace Map.Presentation
             cell.transform.position = HexLayoutConverter.HexToWorldPosition(hex.q, hex.r, mapService.HexSize);
 
             cell.GetComponent<HexView>().Bind(hex);
+            if (hex.building && hex.building.defenseConfig)
+            {
+                DefenseBuildingView defenseView = cell.AddComponent<DefenseBuildingView>();
+                container.Inject(defenseView);
+                defenseView.Initialize(hex);
+            }
 
             cellsOfGrid.Add(hex, cell);
 

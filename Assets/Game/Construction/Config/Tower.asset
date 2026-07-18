@@ -19,6 +19,7 @@ MonoBehaviour:
   maxHp: 250
   biome: 1
   prefabCell: {fileID: 7699308071540955812, guid: aa882b50aaf4e964aa5c2685a5cd0b80, type: 3}
+  defenseConfig: {fileID: 11400000, guid: 9528c2318a8122a4586de0c2350ee3bc, type: 2}
   resourcesCost:
   - rid: 9052657826008662105
   - rid: 9052657826008662104

@@ -4,12 +4,15 @@ using Zenject;
 using Map.Generator;
 using Map.Services;
 using Map.Presentation;
-using UI.Controllers;
 using UI.WorldUI;
-using Construction.Services;
-using Economy.Domain;
+using UI.Controllers;
 using Economy.Services;
+using Economy.Domain;
 using Economy.Presentation;
+using Construction.Services;
+using Combat;
+using Combat.Services;
+using Combat.Enemу;
 using Construction.Config;
 
 namespace Core.Installers
@@ -30,6 +33,7 @@ namespace Core.Installers
             BindEconomy();
             BindBuild();
             BindUI();
+            BindCombat();
 
             BindBootstrap();
         }
@@ -46,13 +50,15 @@ namespace Core.Installers
             Container.Bind<BootstrapState>().AsSingle();
             Container.Bind<DayState>().AsSingle();
             Container.Bind<NightState>().AsSingle();
+            Container.Bind<LoseState>().AsSingle();
+            Container.Bind<WinState>().AsSingle();
         }
 
         private void BindMap()
         {
             Container.Bind<MapView>()
-                     .FromComponentInHierarchy()
-                     .AsSingle();
+             .FromComponentInHierarchy()
+             .AsSingle();
 
             Container.Bind<IMapGenerator>()
                      .To<MapGenerator>()
@@ -72,8 +78,8 @@ namespace Core.Installers
                      .AsSingle();
 
             Container.Bind<EconomyView>()
-                     .FromComponentInHierarchy()
-                     .AsSingle();
+             .FromComponentInHierarchy()
+             .AsSingle();
         }
 
         private void BindBuild()
@@ -88,15 +94,32 @@ namespace Core.Installers
             Container.BindInterfacesAndSelfTo<HexSelectionService>().AsSingle(); //Биндит себя и Init/Dispose
 
             Container.Bind<HexSelectedPanelView>()
-                    .FromComponentInHierarchy()
-                    .AsSingle();
+                .FromComponentInHierarchy()
+                .AsSingle();
 
             Container.Bind<HexPanelController>().AsSingle().NonLazy();
         }
 
+        private void BindCombat()
+        {
+            Container.Bind<INavigationService>()
+                     .To<NavigationService>()
+                     .AsSingle();
+
+            Container.Bind<ICombatService>()
+                     .To<CombatService>()
+                     .AsSingle().NonLazy();
+
+            Container.Bind<IEnemy>()
+                     .To<EnemyView>()
+                     .AsSingle();
+
+            Container.Bind<EnemyFactory>().AsSingle();
+        }
+
         private void BindBootstrap()
         {
-            Container.BindInterfacesTo<GameBootstrap>().AsSingle().NonLazy();
+            Container.Bind<GameBootstrap>().AsSingle().NonLazy();
         }
     }
 }

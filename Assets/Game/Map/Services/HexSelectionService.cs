@@ -102,10 +102,10 @@ namespace Map.Services
         {
             while (true)
             {
-                if (EventSystem.current)
+                if (EventSystem.current && !Input.GetKeyDown(KeyCode.Escape))
                     onUIBlock = EventSystem.current.IsPointerOverGameObject(); //Клик по UI игнорируем
 
-                if (Input.GetMouseButtonDown(0))
+                if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Escape))
                 {
                     Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
